@@ -43,17 +43,15 @@ h1, h2, h3{
 }
 
 .container{
-  max-windth: 1280px;
+  max-width: 1280px;
   padding-inline: 32px;
   margin-inline: auto;
 }
 
-/* utility-first */
-
-.grid{
-  display: grid;
+img{
+  max-width: 100%;
 }
 
-.grid-flow-col{
-  grid-auto-flow: column;
+main{
+  margin-top: 40px;
 }
