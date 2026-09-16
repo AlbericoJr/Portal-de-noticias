@@ -64,11 +64,13 @@ section header {
   grid-area: weekly;
 
   &>div {
-    grid-template-columns: repeat(4, 292px);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   img {
     height: 160px;
+    width: 100%;
+    object-fit: cover;
   }
 
   figure {
@@ -122,5 +124,51 @@ aside {
     width: 72px;
     aspect-ratio: 1/1;
     object-fit: cover;
+  }
+}
+
+@media (max-width: 1100px) {
+  #weekly>div {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  section header {
+    grid-template-columns: 1fr;
+    row-gap: 12px;
+  }
+
+  section header a {
+    justify-self: start;
+  }
+
+  #featured {
+    grid-template-columns: 1fr;
+  }
+
+  #featured .grid-cols-2,
+  #ai .grid,
+  #more .grid {
+    grid-template-columns: 1fr;
+  }
+
+  #weekly>div {
+    grid-template-columns: 1fr;
+  }
+
+  #ai article,
+  #more article {
+    grid-template-columns: 1fr;
+  }
+
+  #ai img {
+    width: 100%;
+    max-width: 220px;
+  }
+
+  #more img {
+    width: 100%;
+    max-width: 120px;
   }
 }
